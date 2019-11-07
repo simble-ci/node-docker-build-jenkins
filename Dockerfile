@@ -27,7 +27,7 @@ RUN apt-get install -y build-essential git curl mysql-server \
     && apt-get install -y nodejs \
     && npm install -g yarn
 
-RUN apt-get install -y redis-server
+RUN apt-get install -y redis-server libfontconfig
 RUN sed -i '/^bind/s/bind.*/bind 0.0.0.0/' /etc/redis/redis.conf
 
 ADD config/init-start.sh /init-start.sh
